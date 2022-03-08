@@ -3,7 +3,7 @@ lock '~> 3.16.0'
 
 set :application, 'rails-quote'
 set :repo_url, 'git@github.com:rakaur/rails-quote.git'
-set :branch, 'main'
+set :branch, 'develop'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
