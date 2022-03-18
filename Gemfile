@@ -30,12 +30,6 @@ gem 'cssbundling-rails'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
 
-# Use Redis adapter to run Action Cable in production
-gem "redis", "~> 4.0"
-
-# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
-# gem "kredis"
-
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
@@ -53,12 +47,6 @@ gem 'bootsnap', require: false
 
 # Use simple-form for... simple forms
 gem 'simple_form', '~> 5.1.0'
-
-# Deployment
-gem 'capistrano', '~> 3.11'
-gem 'capistrano-passenger', '~> 0.2.0'
-gem 'capistrano-rails', '~> 1.4'
-gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
 
 # For user authentication
 gem "devise", "~> 4.8.1"
@@ -78,6 +66,9 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 
+  # Needs this for bin/dev
+  gem 'foreman'
+
   # For linting/etc in vscode
   gem 'solargraph'
 end
@@ -89,4 +80,13 @@ group :test do
   gem 'webdrivers'
 end
 
-gem 'foreman'
+group :production do
+  # Use Redis adapter to run Action Cable in production
+  gem "redis", "~> 4.0"
+
+  # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
+  # gem "kredis"
+
+  # Production web server
+  gem 'unicorn'
+end
